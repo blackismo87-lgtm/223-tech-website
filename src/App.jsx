@@ -68,7 +68,9 @@ function App() {
             <li><a href="#portfolio" className={`nav-link ${activeSection === 'portfolio' ? 'active' : ''}`}>Portfolio</a></li>
             <li><a href="#contact" className={`nav-link ${activeSection === 'contact' ? 'active' : ''}`}>Contact</a></li>
           </ul>
-          <button className="btn-primary">Parlons de votre projet</button>
+          <button className="btn-primary" onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}>
+            Parlons de votre projet
+          </button>
         </div>
       </nav>
 
@@ -262,9 +264,9 @@ function App() {
             <div className="reveal" style={{ transitionDelay: '0.2s' }}>
               <h4 style={{ marginBottom: '1.5rem' }}>Contact</h4>
               <ul style={{ color: 'var(--text-muted)', display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
-                <li>contact@223tech.com</li>
+                <li><a href="mailto:223techmali@gmail.com" style={{ color: 'inherit' }}>223techmali@gmail.com</a></li>
                 <li>Bamako, Mali</li>
-                <li>+223 XX XX XX XX</li>
+                <li><a href="tel:+22369565497" style={{ color: 'inherit' }}>+223 69 56 54 97</a></li>
               </ul>
             </div>
             <div className="reveal" style={{ transitionDelay: '0.3s' }}>
