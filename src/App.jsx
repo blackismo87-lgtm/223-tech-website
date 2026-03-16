@@ -143,7 +143,7 @@ function App() {
               </ul>
             </div>
             <div className="glass-card reveal" style={{ height: '400px', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'linear-gradient(45deg, var(--glass-bg), hsla(25, 100%, 55%, 0.1))', transitionDelay: '0.4s' }}>
-              <img src={logo} alt="Branding" style={{ width: '60%', opacity: 0.8 }} />
+              <img src={logo} alt="223 TECH Branding - Innovation digitale au Mali" style={{ width: '60%', opacity: 0.8 }} />
             </div>
           </div>
         </div>
