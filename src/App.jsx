@@ -4,8 +4,17 @@ import logo from './assets/logo.png'
 function App() {
   const [showBackToTop, setShowBackToTop] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
+    // 0. Close menu on click outside
+    const handleBodyClick = (e) => {
+      if (isMenuOpen && !e.target.closest('.nav-links') && !e.target.closest('.menu-toggle')) {
+        setIsMenuOpen(false);
+      }
+    };
+    document.addEventListener('click', handleBodyClick);
+
     // 1. Reveal Animations Logic
     const revealObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -45,12 +54,16 @@ function App() {
       revealObserver.disconnect();
       sectionObserver.disconnect();
       window.removeEventListener('scroll', handleScroll);
+      document.removeEventListener('click', handleBodyClick);
     };
-  }, []);
+  }, [isMenuOpen]);
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
+
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  const closeMenu = () => setIsMenuOpen(false);
 
   return (
     <div className="app">
@@ -61,14 +74,26 @@ function App() {
             <img src={logo} alt="223 TECH Logo" className="logo-icon" />
             <span>223 <span className="text-gradient">TECH</span></span>
           </div>
-          <ul className="nav-links">
-            <li><a href="#home" className={`nav-link ${activeSection === 'home' ? 'active' : ''}`}>Accueil</a></li>
-            <li><a href="#services" className={`nav-link ${activeSection === 'services' ? 'active' : ''}`}>Services</a></li>
-            <li><a href="#formations" className={`nav-link ${activeSection === 'formations' ? 'active' : ''}`}>Formations IA</a></li>
-            <li><a href="#portfolio" className={`nav-link ${activeSection === 'portfolio' ? 'active' : ''}`}>Portfolio</a></li>
-            <li><a href="#contact" className={`nav-link ${activeSection === 'contact' ? 'active' : ''}`}>Contact</a></li>
+          
+          <div className="menu-toggle" onClick={toggleMenu}>
+            {isMenuOpen ? '✕' : '☰'}
+          </div>
+
+          <ul className={`nav-links ${isMenuOpen ? 'open' : ''}`}>
+            <li><a href="#home" className={`nav-link ${activeSection === 'home' ? 'active' : ''}`} onClick={closeMenu}>Accueil</a></li>
+            <li><a href="#services" className={`nav-link ${activeSection === 'services' ? 'active' : ''}`} onClick={closeMenu}>Services</a></li>
+            <li><a href="#formations" className={`nav-link ${activeSection === 'formations' ? 'active' : ''}`} onClick={closeMenu}>Formations IA</a></li>
+            <li><a href="#portfolio" className={`nav-link ${activeSection === 'portfolio' ? 'active' : ''}`} onClick={closeMenu}>Portfolio</a></li>
+            <li><a href="#contact" className={`nav-link ${activeSection === 'contact' ? 'active' : ''}`} onClick={closeMenu}>Contact</a></li>
+            {/* CTA button inside menu for mobile */}
+            <li className="mobile-only" style={{ marginTop: '2rem' }}>
+               <button className="btn-primary" onClick={() => { closeMenu(); document.getElementById('contact').scrollIntoView({ behavior: 'smooth' }); }}>
+                Parlons de votre projet
+              </button>
+            </li>
           </ul>
-          <button className="btn-primary" onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}>
+          
+          <button className="btn-primary desktop-only" onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}>
             Parlons de votre projet
           </button>
         </div>
