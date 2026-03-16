@@ -267,6 +267,7 @@ function App() {
                 <li><a href="mailto:223techmali@gmail.com" style={{ color: 'inherit' }}>223techmali@gmail.com</a></li>
                 <li>Bamako, Mali</li>
                 <li><a href="tel:+22369565497" style={{ color: 'inherit' }}>+223 69 56 54 97</a></li>
+                <li><a href="https://wa.me/22369565497" target="_blank" rel="noopener noreferrer" style={{ color: '#25d366', fontWeight: 'bold' }}>WhatsApp Direct →</a></li>
               </ul>
             </div>
             <div className="reveal" style={{ transitionDelay: '0.3s' }}>
@@ -288,6 +289,17 @@ function App() {
       <div className={`back-to-top ${showBackToTop ? 'visible' : ''}`} onClick={scrollToTop}>
         ↑
       </div>
+
+      {/* WhatsApp Float */}
+      <a 
+        href="https://wa.me/22369565497" 
+        className="whatsapp-float" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        title="Discutez avec nous sur WhatsApp"
+      >
+        💬
+      </a>
     </div>
   )
 }
