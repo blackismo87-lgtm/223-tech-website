@@ -101,15 +101,15 @@ function App() {
 
       {/* Hero Section */}
       <header id="home" className="section hero">
-        <div className="container animate-fade" style={{ textAlign: 'center', paddingTop: '4rem' }}>
-          <h1 style={{ fontSize: '4.5rem', marginBottom: '1.5rem' }}>
+        <div className="container animate-fade hero-content">
+          <h1>
             L'Innovation Digitale <br />
             propulsée par <span className="text-gradient">l'IA au Mali</span>
           </h1>
-          <p style={{ fontSize: '1.2rem', color: 'var(--text-muted)', maxWidth: '800px', margin: '0 auto 2.5rem' }}>
+          <p className="hero-description">
             Devenir une référence en Afrique dans la création de solutions digitales basées sur l'Intelligence Artificielle. Nous aidons les entreprises à se transformer et à gagner du temps.
           </p>
-          <div style={{ display: 'flex', gap: '1.5rem', justifyContent: 'center' }}>
+          <div className="hero-btns">
             <button className="btn-primary">Découvrir nos solutions</button>
             <button className="btn-secondary">
               Voir nos formations
@@ -121,28 +121,28 @@ function App() {
       {/* Mission Section */}
       <section className="section about reveal">
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center' }}>
-            <div className="reveal" style={{ transitionDelay: '0.2s' }}>
-              <h2 style={{ fontSize: '2.5rem', marginBottom: '1.5rem' }}>Notre <span className="text-gradient">Mission</span></h2>
-              <p style={{ color: 'var(--text-muted)', marginBottom: '2rem', fontSize: '1.1rem' }}>
+          <div className="about-grid">
+            <div className="reveal mission-text" style={{ transitionDelay: '0.2s' }}>
+              <h2>Notre <span className="text-gradient">Mission</span></h2>
+              <p className="section-desc">
                 Chez 223 TECH, nous croyons que le futur de l'entreprise est lié à sa capacité d'adopter les outils de demain.
               </p>
-              <ul style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                <li style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
-                  <div style={{ padding: '8px', background: 'var(--glass-bg)', borderRadius: '50%', color: 'var(--color-primary)' }}>✓</div>
+              <ul className="mission-list">
+                <li>
+                  <div className="check-icon">✓</div>
                   Aider les entreprises à créer des outils modernes.
                 </li>
-                <li style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
-                  <div style={{ padding: '8px', background: 'var(--glass-bg)', borderRadius: '50%', color: 'var(--color-primary)' }}>✓</div>
+                <li>
+                  <div className="check-icon">✓</div>
                   Optimiser les workflows grâce à l’IA.
                 </li>
-                <li style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
-                  <div style={{ padding: '8px', background: 'var(--glass-bg)', borderRadius: '50%', color: 'var(--color-primary)' }}>✓</div>
+                <li>
+                  <div className="check-icon">✓</div>
                   Former la nouvelle génération de talents.
                 </li>
               </ul>
             </div>
-            <div className="glass-card reveal" style={{ height: '400px', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'linear-gradient(45deg, var(--glass-bg), hsla(25, 100%, 55%, 0.1))', transitionDelay: '0.4s' }}>
+            <div className="glass-card reveal mission-visual" style={{ transitionDelay: '0.4s' }}>
               <img src={logo} alt="223 TECH Branding - Innovation digitale au Mali" style={{ width: '60%', opacity: 0.8 }} />
             </div>
           </div>
@@ -152,11 +152,11 @@ function App() {
       {/* Services Section */}
       <section id="services" className="section services reveal" style={{ background: 'var(--gradient-dark)' }}>
         <div className="container">
-          <div style={{ textAlign: 'center', marginBottom: '4rem' }} className="reveal">
-            <h2 style={{ fontSize: '3rem' }}>Nos <span className="text-gradient">Services</span> Expertise</h2>
-            <p style={{ color: 'var(--text-muted)' }}>Des solutions sur mesure pour votre transformation digitale.</p>
+          <div className="section-header reveal">
+            <h2>Nos <span className="text-gradient">Services</span> Expertise</h2>
+            <p>Des solutions sur mesure pour votre transformation digitale.</p>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem' }}>
+          <div className="services-grid">
             <div className="glass-card reveal" style={{ transitionDelay: '0.1s' }}>
               <div style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>🌐</div>
               <h3>Web Professionnel</h3>
@@ -252,12 +252,12 @@ function App() {
       {/* Training / CTA Section */}
       <section id="formations" className="section cta reveal">
         <div className="container">
-          <div className="glass-card reveal" style={{ textAlign: 'center', padding: '5rem', background: 'var(--gradient-brand)', color: 'white' }}>
-            <h2 style={{ fontSize: '3rem', marginBottom: '1.5rem' }}>Prêt à passer au niveau supérieur ?</h2>
-            <p style={{ fontSize: '1.2rem', marginBottom: '2.5rem', opacity: 0.9 }}>
+          <div className="glass-card reveal cta-card">
+            <h2>Prêt à passer au niveau supérieur ?</h2>
+            <p>
               Rejoignez nos sessions de formation et maîtrisez les outils qui redéfinissent le monde.
             </p>
-            <button style={{ background: 'white', color: 'var(--color-secondary)', padding: '1rem 3rem', borderRadius: '50px', fontWeight: '800', fontSize: '1.1rem' }}>
+            <button className="btn-cta">
               Voir le programme
             </button>
           </div>
